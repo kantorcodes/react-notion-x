@@ -6,15 +6,6 @@
   "include": [],
   "references": [
     {
-      "path": "./packages/notion-types/tsconfig.json"
-    },
-    {
-      "path": "./packages/notion-utils/tsconfig.json"
-    },
-    {
-      "path": "./packages/notion-client/tsconfig.json"
-    },
-    {
       "path": "./packages/fork-react-notion-x/tsconfig.json"
     }
   ]

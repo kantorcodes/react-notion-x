@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "incremental": true,
-    "target": "ES2015",
+    "target": "es6",
     "module": "ESNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -25,9 +25,6 @@
 
     "lib": ["ESNext", "ESNext.Array", "DOM"],
 
-    "baseUrl": ".",
-    "paths": {
-      "*": ["types/*"]
-    }
+    "baseUrl": "."
   }
 }

@@ -10,7 +10,7 @@ const baseConfig: Options = {
     'src/third-party/pdf.tsx'
   ],
   outDir: 'build',
-  target: 'es2015',
+  target: 'es6',
   platform: 'browser',
   format: ['esm'],
   splitting: false,

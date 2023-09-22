@@ -9109,7 +9109,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fork-react-notion-x@^6.16.2, fork-react-notion-x@workspace:packages/fork-react-notion-x":
+"fork-react-notion-x@^6.16.1, fork-react-notion-x@workspace:packages/fork-react-notion-x":
   version: 0.0.0-use.local
   resolution: "fork-react-notion-x@workspace:packages/fork-react-notion-x"
   dependencies:
@@ -13341,7 +13341,7 @@ __metadata:
     "@types/node": ^16.11.26
     "@types/react": ^17.0.43
     "@types/react-dom": ^17.0.14
-    fork-react-notion-x: ^6.16.2
+    fork-react-notion-x: ^6.16.1
     notion-types: ^6.16.2
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -13359,7 +13359,7 @@ __metadata:
     "@types/node": ^16.11.2
     classnames: ^2.3.1
     cross-env: ^7.0.3
-    fork-react-notion-x: ^6.16.2
+    fork-react-notion-x: ^6.16.1
     got: ^12.0.2
     lqip-modern: ^1.2.0
     next: ^12.1.0
@@ -13380,7 +13380,7 @@ __metadata:
   resolution: "notion-x-example-minimal@workspace:examples/minimal"
   dependencies:
     "@types/node": ^16.11.2
-    fork-react-notion-x: ^6.16.2
+    fork-react-notion-x: ^6.16.1
     next: ^12.1.0
     notion-client: ^6.16.2
     notion-utils: ^6.16.2

@@ -1,6 +1,6 @@
 {
   "name": "notion-x-example-minimal",
-  "version": "6.17.1",
+  "version": "6.17.2",
   "private": true,
   "type": "commonjs",
   "scripts": {
@@ -10,7 +10,7 @@
     "deploy": "vercel deploy"
   },
   "dependencies": {
-    "fork-react-notion-x": "^6.17.1",
+    "fork-react-notion-x": "^6.17.2",
     "next": "^12.1.0",
     "notion-client": "^6.16.2",
     "notion-utils": "^6.16.2",

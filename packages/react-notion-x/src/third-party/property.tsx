@@ -3,6 +3,7 @@ import * as React from 'react'
 import * as types from 'notion-types'
 import format from 'date-fns/format/index.js'
 import formatNumber from 'format-number'
+import { FormulaResult } from 'notion-types'
 
 import { Checkbox } from '../components/checkbox'
 import { GracefulImage } from '../components/graceful-image'
@@ -79,10 +80,10 @@ export const PropertyImpl: React.FC<IPropertyProps> = (props) => {
   const renderFormulaValue = React.useMemo(
     () =>
       function FormulaProperty() {
-        let content: string
+        let content: FormulaResult | null
 
         try {
-          let content = evalFormula(schema.formula, {
+          content = evalFormula(schema.formula, {
             schema: collection?.schema,
             properties: block?.properties
           })

@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { Block, CalendarCollectionView, PageBlock } from 'notion-types'
-import { getBlockIcon, getPagePropertyFromId } from 'notion-utils'
+import { Block, PageBlock } from 'notion-types'
+import { getBlockIcon, getPageProperty } from 'notion-utils'
 
 import { PageIcon } from '../components/page-icon'
 import { useNotionContext } from '../context'
@@ -171,7 +171,7 @@ function Calendar({ blockIds, collectionView, collection }) {
       if (!block) return null
 
       // Get date from calendar view query
-      const blockDate = getPagePropertyFromId(
+      const blockDate = getPageProperty(
         collectionView.query2.calendar_by,
         block,
         recordMap
@@ -341,7 +341,7 @@ function Calendar({ blockIds, collectionView, collection }) {
 
                 {getPagesThisDay(day).map((block, sum) => {
                   // Get date from calendar view query
-                  const blockDate = getPagePropertyFromId(
+                  const blockDate = getPageProperty(
                     collectionView.query2.calendar_by,
                     block,
                     recordMap
@@ -410,10 +410,8 @@ function Calendar({ blockIds, collectionView, collection }) {
                             </div>
                             <div className='notion-calendar-body-inner-card-inner-box-properties'>
                               {collectionView.format?.calendar_properties
-                                ?.filter(
-                                  (p: CalendarCollectionView) => p.visible
-                                )
-                                .map((p: CalendarCollectionView, z) => {
+                                ?.filter((p: any) => p.visible)
+                                .map((p: any, z) => {
                                   const schema = collection.schema[p.property]
                                   const data =
                                     block && block.properties?.[p.property]

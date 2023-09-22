@@ -11,6 +11,5 @@
     "skipLibCheck": true,
     "jsx": "react"
   },
-  "include": ["src"],
-  "references": [{ "path": "../notion-types" }, { "path": "../notion-utils" }]
+  "include": ["src"]
 }

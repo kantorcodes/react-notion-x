@@ -299,7 +299,7 @@ function Calendar({ blockIds, collectionView, collection }) {
                 checkWeek(indexI) == 0 ? 143.99 : checkWeek(indexI) * 110 + 34
               }px`
             }}
-            key={indexI}
+            key={`${indexI}-${i}`}
           >
             {i.map((day, indexY) => (
               <>
@@ -315,7 +315,7 @@ function Calendar({ blockIds, collectionView, collection }) {
                       ? 'notion-calendar-body-inner-week-dif'
                       : ''
                   )}
-                  key={indexY}
+                  key={`${day}-${indexY}`}
                 >
                   <div
                     className={cs(

@@ -24,7 +24,7 @@ export const CollectionViewImpl: React.FC<CollectionViewProps> = (props) => {
       return <CollectionViewBoard {...props} />
 
     case 'calendar':
-      console.log('calendar view')
+      console.log('calendar view s')
       return <CollectionViewCalendar {...props} />
 
     default:

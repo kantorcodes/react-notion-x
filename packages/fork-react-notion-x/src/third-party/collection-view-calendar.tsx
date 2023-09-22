@@ -168,13 +168,16 @@ function Calendar({ blockIds, collectionView, collection }) {
 
     blockIds?.map((blockId: string) => {
       const block = recordMap.block[blockId]?.value as PageBlock
+      // console.log('block is', block)
       if (!block) return null
 
       // Get date from calendar view query
-      const blockDate = getPageProperty(
-        collectionView.query2.calendar_by,
-        block,
-        recordMap
+      const blockDate = getPageProperty('Date', block, recordMap)
+      console.log(
+        'got prop',
+        blockDate,
+        collectionView.query2,
+        collectionView.query
       )
       const blockDateDATE = new Date(blockDate as number)
       if (
@@ -200,6 +203,12 @@ function Calendar({ blockIds, collectionView, collection }) {
       document.querySelector('.notion-page').classList.add('notion-full-width')
     }
   }, [isCollectionViewPage])
+
+  console.log(
+    isCollectionViewPage,
+    JSON.stringify(recordMap),
+    JSON.stringify(blockIds)
+  )
 
   return (
     <div className='notion-calendar-view'>
@@ -341,11 +350,9 @@ function Calendar({ blockIds, collectionView, collection }) {
 
                 {getPagesThisDay(day).map((block, sum) => {
                   // Get date from calendar view query
-                  const blockDate = getPageProperty(
-                    collectionView.query2.calendar_by,
-                    block,
-                    recordMap
-                  )
+                  console.log('block is', block)
+                  const blockDate = getPageProperty('Date', block, recordMap)
+                  console.log('got block', blockDate)
                   const blockDateDATE = new Date(blockDate as number)
                   const dayBlock = startWeekOnMonday
                     ? blockDateDATE.getDay() === 0
@@ -380,7 +387,7 @@ function Calendar({ blockIds, collectionView, collection }) {
                             (checkWeek(indexI) != 0 ? sum * 110 : 0) + 30
                           }px`
                         }}
-                        key={block.id}
+                        key={`${block.id}-${sum}`}
                       >
                         <components.PageLink
                           href={mapPageUrl(block.id)}
